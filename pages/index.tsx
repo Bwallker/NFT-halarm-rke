@@ -84,7 +84,7 @@ const Home: NextPage = () => {
             VILL DU HA ETT UNIKT HALARMÄRKE SOM ÄR EN INVESTERING?
           </CustomHeader>
         </div>
-        <div className="pe-5 pt-5 my-auto text-center">
+        <div className="pe-5 pt-5 my-auto text-center ">
           <Image src={Stonks} />
         </div>
       </div>
