@@ -1,6 +1,7 @@
-import { ReactNode } from 'react';
+import { ComponentProps, CSSProperties, Fragment, ReactNode } from 'react';
 import classNames from 'classnames';
 import { isArray } from 'util';
+import { Button } from 'react-bootstrap';
 type StyleUnit = 'normal' | 'bold' | 'bolder' | 'light' | 'lighter' | 'italics';
 type TextColor = 'white' | 'black' | 'red';
 export type Style = StyleUnit[] | StyleUnit;
@@ -9,6 +10,7 @@ export interface Props {
   textColor?: TextColor;
   fontStyle?: Style;
   className?: string;
+  style?: CSSProperties;
 }
 
 const parseStyle = (style?: Style): string => {
@@ -60,16 +62,16 @@ export default function Header(
 ): (props: Props) => JSX.Element {
   const Header = (props: Props) => {
     return (
-      <h1
+      <p
         className={classNames(
           parseTextcolor(props.textColor),
           parseStyle(props.fontStyle),
           props.className
         )}
-        style={{ fontSize: fontSize }}
+        style={{ fontSize: fontSize, ...props.style }}
       >
         {props.children}
-      </h1>
+      </p>
     );
   };
   return Header;
