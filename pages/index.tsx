@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Shrek from '../assets/images-for-real/vAhThJ84iE6Jk3ZORRLdjVebcGlW.png';
+import QRCode from '../assets/images-for-real/frame_1.png';
+import Stonks from '../assets/images-for-real/download.png';
 import Phone from '../assets/images/579161.png';
-import Girl from '../assets/images/67732.jpg';
-import GirlDots from '../assets/images/Untitled5.png';
+
 import Phone2 from '../assets/images/OS5KJE1.png';
 import Phone2Circle from '../assets/images/Untitled6.png';
 import PhoneBusinessmen from '../assets/images/closeupofthreebusinesspeoplehandsusingtheirsmartphoneswhileridingtheelevator_swgbe9_9r__F0000.jpg';
@@ -68,37 +70,30 @@ const Home: NextPage = () => {
   });
   return (
     <div>
+      <head>
+        <title>NFT Halare</title>
+      </head>
       <div
         style={{
           background: 'linear-gradient(to bottom right, #ff005b, #620d9a)',
         }}
         className="row row-cols-2"
       >
-        <div className="p-5 mt-5 text-center">
-          <Header1 textColor="white" fontStyle="bold">
-            CREATE
-          </Header1>
-          <Header1 textColor="white" fontStyle="bold">
-            & DELIVER
-          </Header1>
-          <Header2 textColor="white">Real Experience</Header2>
+        <div className="p-5 my-auto text-center">
+          <CustomHeader fontSize="4rem" textColor="white" fontStyle="bold">
+            VILL DU HA ETT UNIKT HALARMÄRKE SOM ÄR EN INVESTERING?
+          </CustomHeader>
         </div>
-        <div className="pe-5 pt-5 text-center position-sticky">
-          <Image src={Phone} width={417} height={717} />
+        <div className="pe-5 pt-5 my-auto text-center">
+          <Image src={Stonks} />
         </div>
       </div>
       <div
-        className="row row-cols-2 text-center justify-content-center position-relative"
+        className="row row-cols-2 text-center justify-content-around position-relative"
         style={{ backgroundColor: '#360051' }}
       >
-        <div className="m-0 p-0 translate-middle-y d-flex">
-          <Image src={Girl} width={568.5} height={540} />
-          <div
-            className="position-relative"
-            style={{ top: '20vh', left: '-5vw' }}
-          >
-            <Image src={GirlDots} width={284} height={284} />
-          </div>
+        <div>
+          <Image src={Shrek} width={512} height={512} />
         </div>
         <div
           className="text-start m-0 p-0 position-relative"
@@ -106,11 +101,10 @@ const Home: NextPage = () => {
         >
           <Header1 textColor="white">01</Header1>
           <Header2 textColor="red" fontStyle="bold">
-            AN INSPIRATIONAL TECHNOLOGY
+            EN INSPIRERANDE TEKNOLOGI
           </Header2>
           <CustomHeader textColor="white" fontSize={'1.25rem'}>
-            Phasellus scelerisque sed leo quis gravida. Fusce lobortis libero ut
-            arcu blandit pharetra.
+            Vi tog det traditionella halarmärket och gav det en ny twist.
           </CustomHeader>
         </div>
       </div>
@@ -124,22 +118,19 @@ const Home: NextPage = () => {
         >
           <Header1 textColor="white">02</Header1>
           <Header2 textColor="red" fontStyle="bold">
-            QUICKLY PICK UP
+            NFT - BLI RIK SNABBT
           </Header2>
-          <Header2 textColor="red" fontStyle="bold">
-            A NEW SKILL
-          </Header2>
+
           <CustomHeader textColor="white" fontSize={'1.25rem'}>
-            How much time do you think that you get to make a good impression
-            with a potential customer? If you’re talking about interacting with
-            them online, you have less than three seconds.
+            NFT står för Non Fungable Token. En NFT är ett digitalt föremål som
+            finns på blockkedjan. Varje NFT är unik eftersom de innehåller en
+            innbygd autentiserings mekanism som gör att det är lätt att kolla om
+            en NFT är godkänd av blockkedjan. Vi har använt oss av NFT
+            teknologin för att skapa unika halarmärken som bara en person äger.
           </CustomHeader>
         </div>
-        <div className="m-0 p-0 d-flex">
-          <Image src={Phone2} width={625.6} height={660.8} />
-          <div className="position-relative" style={{ left: '-10vw' }}>
-            <Image src={Phone2Circle} width={300} height={300} />
-          </div>
+        <div className="my-auto p-0">
+          <Image src={QRCode} width={300} height={300} />
         </div>
       </div>
       <div className="text-center justify-content-center">
