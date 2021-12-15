@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Shrek from '../assets/images-for-real/vAhThJ84iE6Jk3ZORRLdjVebcGlW.png';
 import QRCode from '../assets/images-for-real/frame_1.png';
 import Stonks from '../assets/images-for-real/download.png';
+import OnePieceBadges from '../assets/images-for-real/OnePieceBadges.png';
 import Phone from '../assets/images/579161.png';
 
 import Phone2 from '../assets/images/OS5KJE1.png';
@@ -82,7 +83,7 @@ const Home: NextPage = () => {
         className="row row-cols-2"
       >
         <div className="p-5 my-auto text-center">
-          <CustomHeader fontSize="4rem" textColor="white" fontStyle="bold">
+          <CustomHeader fontSize="3rem" textColor="white" fontStyle="bold">
             VILL DU HA ETT UNIKT HALARMÄRKE SOM ÄR EN INVESTERING?
           </CustomHeader>
         </div>
@@ -127,7 +128,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="p-0">
-          <Image src={Phone3} width={windowWidth * 0.51} height={500} />
+          <Image src={OnePieceBadges} width={windowWidth * 0.51} height={500} />
         </div>
       </div>
       <div className="text-center justify-content-center">
@@ -166,7 +167,7 @@ const Home: NextPage = () => {
             textColor="red"
             className="my-0 mx-auto py-0 px-0 text-center"
           >
-            EXTREMT BEGRÄNSAT FÖRRÅD - ANMÄL DIG SNABBT
+            INTRESSERAD? - TA KONTAKT
           </Header1>
         </div>
         <Form
@@ -219,7 +220,7 @@ const Home: NextPage = () => {
           </Button>
         </Form>
       </div>
-      {/*<div
+      <div
         className="row row-cols-2 text-center justify-content-center position-relative"
         style={{ backgroundColor: '#360051' }}
       >
@@ -244,7 +245,7 @@ const Home: NextPage = () => {
           <Image src={QRCode} width={300} height={300} />
         </div>
       </div>
-
+      {/*
       <div className="row row-cols-2 justify-content-center">
         <div className="mt-5 ps-5">
           <Header2 textColor="red" fontStyle="bold">
