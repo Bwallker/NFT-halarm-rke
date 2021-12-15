@@ -56,8 +56,10 @@ const Counter = ({
 };
 
 const Home: NextPage = () => {
+  const [wwindow, setWwindow] = useState<Window>();
   const [windowWidth, setWindowWidth] = useState(0);
   useEffect(() => {
+    setWwindow(window);
     setWindowWidth(window.innerWidth);
     const resize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', resize);
@@ -84,7 +86,7 @@ const Home: NextPage = () => {
             VILL DU HA ETT UNIKT HALARMÄRKE SOM ÄR EN INVESTERING?
           </CustomHeader>
         </div>
-        <div className="pe-5 pt-5 my-auto text-center ">
+        <div className="pe-5 pt-5 my-auto text-center">
           <Image src={Stonks} />
         </div>
       </div>
@@ -108,40 +110,35 @@ const Home: NextPage = () => {
           </CustomHeader>
         </div>
       </div>
-      <div
-        className="row row-cols-2 text-center justify-content-center position-relative"
-        style={{ backgroundColor: '#360051' }}
-      >
-        <div
-          className="text-start my-0 ms-auto me-0 p-0 position-relative"
-          style={{ width: '20vw', left: '-10vw' }}
-        >
-          <Header1 textColor="white">02</Header1>
-          <Header2 textColor="red" fontStyle="bold">
-            NFT - BLI RIK SNABBT
-          </Header2>
-
-          <CustomHeader textColor="white" fontSize={'1.25rem'}>
-            NFT står för Non Fungable Token. En NFT är ett digitalt föremål som
-            finns på blockkedjan. Varje NFT är unik eftersom de innehåller en
-            innbygd autentiserings mekanism som gör att det är lätt att kolla om
-            en NFT är godkänd av blockkedjan. Vi har använt oss av NFT
-            teknologin för att skapa unika halarmärken som bara en person äger.
-          </CustomHeader>
+      <div className="row row-cols-2">
+        <div className="mx-0" style={{ backgroundColor: '#360051' }}>
+          <div className="pt-5 mt-5 ps-5 ms-5">
+            <Header1 textColor="white" className="my-0 py-0">
+              02
+            </Header1>
+            <Header2 textColor="red" fontStyle="bold" className="my-0 py-0">
+              NFT HALARMÄRKE - ETT NYTT SÄTT ATT VISA UPP HALARMÄRKET
+            </Header2>
+            <CustomHeader textColor="white" fontSize={'1.25rem'}>
+              Vi lagt en QR kod på baksidan av halarmärken som leder till en NFT
+              av bilden på halarmärket. Detta är förrutom ett halarmärke också
+              en investering.
+            </CustomHeader>
+          </div>
         </div>
-        <div className="my-auto p-0">
-          <Image src={QRCode} width={300} height={300} />
+        <div className="p-0">
+          <Image src={Phone3} width={windowWidth * 0.51} height={500} />
         </div>
       </div>
       <div className="text-center justify-content-center">
         <Header3 fontStyle="bold" className="mt-5">
-          DOING THE RIGHT THINGS
+          STATISTIK
         </Header3>
         <div className="row row-cols-auto text-center justify-content-center p-0 m-0">
-          <Counter end={92}>HAPPY CLIENTS</Counter>
-          <Counter end={33}>AWARDS WINNING</Counter>
-          <Counter end={12}>OUR PROJECTS</Counter>
-          <Counter end={492}>WORKING HOURS</Counter>
+          <Counter end={0}>GLADA KUNDER</Counter>
+          <Counter end={Math.random() > 0.5 ? 4 : 3}>VÅRA HALARMÄRKEN</Counter>
+          <Counter end={0}>HALARMÄRKEN SÅLDA</Counter>
+          <Counter end={100}>ARBETSTIMMAR</Counter>
         </div>
       </div>
       <div className="row row-cols-auto text-center justify-content-center position-relative">
@@ -165,26 +162,19 @@ const Home: NextPage = () => {
           style={{ zIndex: 0, left: 0 }}
           className="mx-5 px-5 position-relative text-start"
         >
-          <Header1 textColor="red" className="my-0 py-0">
-            DREAM,
+          <Header1
+            textColor="red"
+            className="my-0 mx-auto py-0 px-0 text-center"
+          >
+            EXTREMT BEGRÄNSAT FÖRRÅD - ANMÄL DIG SNABBT
           </Header1>
-          <Header1 textColor="red" className="my-0 py-0">
-            TRAIN AND
-          </Header1>
-          <Header1 textColor="red" className="my-0 py-0">
-            ACTIVATE
-          </Header1>
-          <CustomHeader textColor="white" fontSize={'1.25rem'}>
-            Justis pede vixtu, aliquet vel fringilla, pellentes arcu eget mus
-            vix
-          </CustomHeader>
         </div>
         <Form
           style={{ zIndex: 0 }}
           className="position-relative my-auto text-start"
         >
           <Form.Control
-            className="bg-transparent text-white border-danger border-4"
+            className="bg-transparent text-white border-danger border-4 mt-5"
             type="text"
             value={formData.name}
             placeholder="Name"
@@ -215,39 +205,46 @@ const Home: NextPage = () => {
             }}
           />
           <Button
-            className="mt-3"
+            className="mt-3 mb-5"
             variant="danger"
             onClick={async () => {
               await fetch('/api/email', {
                 method: 'POST',
                 body: JSON.stringify(formData),
               });
+              wwindow?.location.reload();
             }}
           >
             SUBMIT
           </Button>
         </Form>
       </div>
-      <div className="row row-cols-2">
-        <div className="p-0">
-          <Image src={Phone3} width={windowWidth * 0.51} height={500} />
+      {/*<div
+        className="row row-cols-2 text-center justify-content-center position-relative"
+        style={{ backgroundColor: '#360051' }}
+      >
+        <div
+          className="text-start my-0 ms-auto me-0 p-0 position-relative"
+          style={{ width: '20vw', left: '-10vw' }}
+        >
+          <Header1 textColor="white">03</Header1>
+          <Header2 textColor="red" fontStyle="bold">
+            NFT
+          </Header2>
+
+          <CustomHeader textColor="white" fontSize={'1.25rem'}>
+            NFT står för Non Fungable Token. En NFT är ett digitalt föremål som
+            finns på blockkedjan. Varje NFT är unik eftersom de innehåller en
+            innbygd autentiserings mekanism som gör att det är lätt att kolla om
+            en NFT är godkänd av blockkedjan. Vi har använt oss av NFT
+            teknologin för att skapa unika halarmärken som bara en person äger.
+          </CustomHeader>
         </div>
-        <div className="mx-0" style={{ backgroundColor: '#360051' }}>
-          <div className="pt-5 mt-5">
-            <Header1 textColor="white" className="my-0 py-0">
-              03
-            </Header1>
-            <Header2 textColor="red" fontStyle="bold" className="my-0 py-0">
-              USERFRIENDLY DESIGN
-            </Header2>
-            <CustomHeader textColor="white" fontSize={'1.25rem'}>
-              How much time do you think that you get to make a good impression
-              with a potential customer? If you’re talking about interacting
-              with them online, you have less than three seconds.
-            </CustomHeader>
-          </div>
+        <div className="my-auto p-0">
+          <Image src={QRCode} width={300} height={300} />
         </div>
       </div>
+
       <div className="row row-cols-2 justify-content-center">
         <div className="mt-5 ps-5">
           <Header2 textColor="red" fontStyle="bold">
@@ -281,7 +278,7 @@ const Home: NextPage = () => {
           Suspendisse euismod leo sapien, sit amet accumsan quam fermentum nec.
         </p>
         <Image src={AppleLogo} />
-      </div>
+      </div>*/}
     </div>
   );
 };
