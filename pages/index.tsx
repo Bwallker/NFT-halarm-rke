@@ -15,7 +15,7 @@ import Header2 from '../components/Text/Header2';
 import Header3 from '../components/Text/Header3';
 import CustomHeader from '../components/Text/CustomHeader';
 import CountUp from 'react-countup';
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 
@@ -54,6 +54,13 @@ const Counter = ({
 };
 
 const Home: NextPage = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const resize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, []);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -232,7 +239,7 @@ const Home: NextPage = () => {
       </div>
       <div className="row row-cols-2">
         <div className="p-0">
-          <Image src={Phone3} width={window.innerWidth * 0.51} height={500} />
+          <Image src={Phone3} width={windowWidth * 0.51} height={500} />
         </div>
         <div className="mx-0" style={{ backgroundColor: '#360051' }}>
           <div className="pt-5 mt-5">
@@ -263,7 +270,7 @@ const Home: NextPage = () => {
           </CustomHeader>
           <Image src={Phone4} />
         </div>
-        <Image src={OfficeSetup} width={window.innerWidth * 0.5} height={200} />
+        <Image src={OfficeSetup} width={windowWidth * 0.5} height={200} />
       </div>
       <div
         className="text-center mt-5"
