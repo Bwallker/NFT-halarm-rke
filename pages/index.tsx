@@ -3,16 +3,8 @@ import Image from 'next/image';
 import Shrek from '../assets/images-for-real/vAhThJ84iE6Jk3ZORRLdjVebcGlW.png';
 import QRCode from '../assets/images-for-real/frame_1.png';
 import Stonks from '../assets/images-for-real/download.png';
-import OnePieceBadges from '../assets/images-for-real/OnePieceBadges.png';
-import Phone from '../assets/images/579161.png';
+import TechTech from '../assets/images-for-real/775.jpeg';
 
-import Phone2 from '../assets/images/OS5KJE1.png';
-import Phone2Circle from '../assets/images/Untitled6.png';
-import PhoneBusinessmen from '../assets/images/closeupofthreebusinesspeoplehandsusingtheirsmartphoneswhileridingtheelevator_swgbe9_9r__F0000.jpg';
-import Phone3 from '../assets/images/grcell2.jpg';
-import Phone4 from '../assets/images/Untitled6.jpg';
-import OfficeSetup from '../assets/images/Untitled2.jpg';
-import AppleLogo from '../assets/images/h5img11.png';
 import Header1 from '../components/Text/Header1';
 import Header2 from '../components/Text/Header2';
 import Header3 from '../components/Text/Header3';
@@ -27,14 +19,6 @@ interface FormData {
   email: string;
   message: string;
 }
-
-const LILink = (href: string, text: string) => (
-  <li>
-    <a className="text-decoration-none text-white" href={href}>
-      {text}
-    </a>
-  </li>
-);
 
 const Counter = ({
   end,
@@ -128,7 +112,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="p-0">
-          <Image src={OnePieceBadges} width={windowWidth * 0.51} height={500} />
+          <Image src={TechTech} width={windowWidth * 0.51} height={500} />
         </div>
       </div>
       <div className="text-center justify-content-center">
@@ -142,23 +126,10 @@ const Home: NextPage = () => {
           <Counter end={100}>ARBETSTIMMAR</Counter>
         </div>
       </div>
-      <div className="row row-cols-auto text-center justify-content-center position-relative">
-        <Image
-          src={PhoneBusinessmen}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            background: 'rgba(67,0,93,0.7)',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-          }}
-        />
+      <div
+        className="row row-cols-auto text-center justify-content-center position-relative"
+        style={{ backgroundColor: '#360051' }}
+      >
         <div
           style={{ zIndex: 0, left: 0 }}
           className="mx-5 px-5 position-relative text-start"
@@ -167,7 +138,7 @@ const Home: NextPage = () => {
             textColor="red"
             className="my-0 mx-auto py-0 px-0 text-center"
           >
-            INTRESSERAD? - TA KONTAKT
+            INTRESSERAD? - TA KONTAKT!
           </Header1>
         </div>
         <Form
@@ -180,7 +151,6 @@ const Home: NextPage = () => {
             value={formData.name}
             placeholder="Name"
             onChange={(e) => {
-              console.log(e.target.value);
               setFormData({ ...formData, name: e.target.value });
             }}
           />
@@ -190,7 +160,6 @@ const Home: NextPage = () => {
             value={formData.email}
             placeholder="Email"
             onChange={(e) => {
-              console.log(e.target.value);
               setFormData({ ...formData, email: e.target.value });
             }}
           />
@@ -201,7 +170,6 @@ const Home: NextPage = () => {
             value={formData.message}
             placeholder="Message"
             onChange={(e) => {
-              console.log(e.target.value);
               setFormData({ ...formData, message: e.target.value });
             }}
           />
